@@ -18,10 +18,8 @@ end
 function spawnVehicle()
     for _, v in pairs(Config.Vehicles) do
         loadModel(v.Model)
-        local Vehicle = Citizen.InvokeNative(0xAF35D0D2583051B0, GetHashKey(v.Model), v.Coords[1], v.Coords[2],
-            v.Coords[3], v.Coords[4], false, false, true, false)                                                                                            -- CreateVehicle
-        Citizen.InvokeNative(0x203BEFFDBE12E96A, Vehicle, v.Coords[1], v.Coords[2], v.Coords[3], v.Coords[4], 0.0, 0.0,
-            0.0)                                                                                                                                            -- SetEntityCoordsAndHeading
+        local Vehicle = Citizen.InvokeNative(0xAF35D0D2583051B0, GetHashKey(v.Model), v.Coords[1], v.Coords[2], v.Coords[3], v.Coords[4], false, false, true, false) -- CreateVehicle
+        Citizen.InvokeNative(0x203BEFFDBE12E96A, Vehicle, v.Coords[1], v.Coords[2], v.Coords[3], v.Coords[4], 0.0, 0.0, 0.0) -- SetEntityCoordsAndHeading
         table.insert(Vehicles, { vehicle = Vehicle })
 
         if v.Freeze then
@@ -36,25 +34,25 @@ end
 if Config.Framework == 'vorp' then
     RegisterNetEvent("vorp:SelectedCharacter")
     AddEventHandler("vorp:SelectedCharacter", function()
-        Debug("VORP: Carriages spawned")
+        Debug("VORP: Wagons spawned")
         Wait(10000)
         spawnVehicle()
     end)
 elseif Config.Framework == 'rsg' then
     RegisterNetEvent('RSGCore:Client:OnPlayerLoaded', function()
-        Debug("RSG: Carriages spawned")
+        Debug("RSG: Wagons spawned")
         Wait(10000)
         spawnVehicle()
     end)
 elseif Config.Framework == 'rpx' then
     RegisterNetEvent("CLIENT:RPX:PlayerLoaded", function()
-        Debug("RPX: Carriages spawned")
+        Debug("RPX: Wagons spawned")
         Wait(10000)
         spawnVehicle()
     end)
 elseif Config.Framework == 'qbr' then
     RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function()
-        Debug("QBR: Carriages spawned")
+        Debug("QBR: Wagons spawned")
         Wait(10000)
         spawnVehicle()
     end)
