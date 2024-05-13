@@ -23,7 +23,7 @@ This tool allows you to spawn vehicles on the map.
 Config = {}
 
 Config.DevMode = true
-Config.Framework = 'vorp' -- vorp, rsg, qbr, redem
+Config.Framework = 'vorp' -- vorp, rsg, rpx, qbr, redem
 
 Config.Vehicles = {
     [1] = {
