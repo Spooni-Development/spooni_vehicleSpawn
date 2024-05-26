@@ -20,7 +20,6 @@ This tool allows you to spawn vehicles on the map.
 
 ## 3. For developers
 
-:::details Config.lua
 ```lua
 Config = {}
 
@@ -104,4 +103,4 @@ Config.Vehicles = {
         Freeze = true,
     },
 }
-:::
+```
