@@ -3,7 +3,7 @@ local rs = GetCurrentResourceName()
 local version = 2
 
 Citizen.CreateThread(function()
-    PerformHttpRequest('https://raw.githubusercontent.com/Spooni-Development/spooni_updates/main/scripts/spooni_vehicleSpawn.json',
+    PerformHttpRequest('https://raw.githubusercontent.com/Spooni-Development/spooni_updates/main/scripts/spooni_vehicle_loader.json',
         function(err, text, headers)
             local text = json.decode(text)
             Wait(5000)
